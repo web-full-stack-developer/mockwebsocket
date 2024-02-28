@@ -2,7 +2,7 @@ const WebSocket = require("ws");
 
 const wss = new WebSocket.Server({ port: 3000 });
 const clients = [];
-const pairs = {};
+const logos = {};
 
 function broadcast(message) {
   clients.forEach((client) => {
@@ -50,7 +50,7 @@ function _decode(e) {
 wss.on("connection", (ws) => {
   console.log("Client connected");
   clients.push(ws);
-  ws.send(JSON.stringify(pairs));
+  ws.send(JSON.stringify(logos));
   // Handle messages from the client
   ws.on("message", (message) => {
     const data = JSON.parse(message).data;
@@ -59,7 +59,7 @@ wss.on("connection", (ws) => {
     
     // Echo the message back to the client
     if (rjscount < 10) console.log(`Received message: ${t}`);
-    if(rjscount == 10) console.log(pairs);
+    if(rjscount == 10) console.log(logos);
 
 
 
@@ -70,18 +70,10 @@ wss.on("connection", (ws) => {
         const v = obj.p[1].v;
         
         if (rjscount < 10 && v && v["base-currency-logoid"]) {
-          pairs[obj.p[1].n] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
+          logos[obj.p[1].n] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
         }
         if (rjscount < 10 && v && v["logoid"]) {
-          pairs[obj.p[1].n] = {"logoid": v["logoid"]}          
-        }
-        if(rjscount < 10 && v) {
-          if(pairs[obj.p[1].n]) {
-            pairs[obj.p[1].n] = {...pairs[obj.p[1].n], lp: v["lp"], chp: v["chp"], ch: v["ch"]}
-          } else {
-            pairs[obj.p[1].n] = {lp: v["lp"], chp: v["chp"], ch: v["ch"]}
-          }
-          
+          logos[obj.p[1].n] = {"logoid": v["logoid"]}          
         }
       }
     }
