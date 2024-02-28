@@ -2,7 +2,7 @@ const WebSocket = require("ws");
 
 const wss = new WebSocket.Server({ port: 3000 });
 const clients = [];
-const logos = {};
+const logos = {}, pairs = {};
 
 function broadcast(message) {
   clients.forEach((client) => {
@@ -50,7 +50,8 @@ function _decode(e) {
 wss.on("connection", (ws) => {
   console.log("Client connected");
   clients.push(ws);
-  ws.send(JSON.stringify(logos));
+  ws.send(JSON.stringify({type: "logos", logos}));
+  ws.send(JSON.stringify({type: "pairs", pairs}));
   // Handle messages from the client
   ws.on("message", (message) => {
     const data = JSON.parse(message).data;
@@ -58,22 +59,29 @@ wss.on("connection", (ws) => {
     const t = _decode(data)
     
     // Echo the message back to the client
-    if (rjscount < 10) console.log(`Received message: ${t}`);
-    if(rjscount == 10) console.log(logos);
-
-
-
+    // if (rjscount < 10) console.log(`Received message: ${t}`);
+    if(rjscount == 10) console.log(logos, pairs);
     for (let e = 0; e < t.length; e++) {
-      
       if (isValidJson(t[e])) {
         const obj = JSON.parse(t[e]);
         const v = obj.p[1].v;
-        
-        if (rjscount < 10 && v && v["base-currency-logoid"]) {
-          logos[obj.p[1].n] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
+        const key = obj.p[1].n;
+
+        if (key && v && v["base-currency-logoid"]) {
+          logos[key] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
         }
-        if (rjscount < 10 && v && v["logoid"]) {
-          logos[obj.p[1].n] = {"logoid": v["logoid"]}          
+        if(key && v && v["logoid"]) {
+          logos[key] = {"logoid": v["logoid"]}          
+        }
+        if(key && !pairs[key]) pairs[key] = {};
+        if(key && v && v["lp"]) {
+          pairs[key] = {...pairs[key], lp: v["lp"]};
+        }
+        if(key && v && v["ch"]) {
+          pairs[key] = {...pairs[key], ch: v["ch"]};
+        }
+        if(key && v && v["chp"]) {
+          pairs[key] = {...pairs[key], chp: v["chp"]};
         }
       }
     }
