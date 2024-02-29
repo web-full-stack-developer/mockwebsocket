@@ -24,27 +24,32 @@ function isValidJson(str) {
 }
 
 function _decode(e) {
-  const t = [];
-  let n, o;
-  do {
-    if (e.substring(0, 3) !== s)
-      return t;
-    n = "",
-      o = "";
-    const i = (e = e.substring(3)).length;
-    for (let t = 0; t < i; t++) {
-      if (o = Number(e.substring(t, t + 1)),
-        Number(e.substring(t, t + 1)) !== o) {
-        e = e.substring(n.length + s.length),
-          n = Number(n);
-        break
+  try{
+    const t = [];
+    let n, o;
+    do {
+      if (e.substring(0, 3) !== s)
+        return t;
+      n = "",
+        o = "";
+      const i = (e = e.substring(3)).length;
+      for (let t = 0; t < i; t++) {
+        if (o = Number(e.substring(t, t + 1)),
+          Number(e.substring(t, t + 1)) !== o) {
+          e = e.substring(n.length + s.length),
+            n = Number(n);
+          break
+        }
+        n += o
       }
-      n += o
-    }
-    t.push(e.substring(0, n)),
-      e = e.substring(n)
-  } while ("" !== e);
-  return t
+      t.push(e.substring(0, n)),
+        e = e.substring(n)
+    } while ("" !== e);
+    return t
+  } catch(e) {
+    return [];
+  }
+  
 }
 
 wss.on("connection", (ws) => {
