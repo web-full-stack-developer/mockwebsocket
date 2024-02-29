@@ -64,25 +64,28 @@ wss.on("connection", (ws) => {
     for (let e = 0; e < t.length; e++) {
       if (isValidJson(t[e])) {
         const obj = JSON.parse(t[e]);
-        const v = obj.p[1].v;
-        const key = obj.p[1].n;
+        if(obj.p && obj.p.length >= 2) {
+          const v = obj.p[1].v;
+          const key = obj.p[1].n;
 
-        if (key && v && v["base-currency-logoid"]) {
-          logos[key] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
+          if (key && v && v["base-currency-logoid"]) {
+            logos[key] = {"base-currency-logoid": v["base-currency-logoid"], "currency-logoid": v["currency-logoid"]}          
+          }
+          if(key && v && v["logoid"]) {
+            logos[key] = {"logoid": v["logoid"]}          
+          }
+          if(key && !pairs[key]) pairs[key] = {};
+          if(key && v && v["lp"]) {
+            pairs[key] = {...pairs[key], lp: v["lp"]};
+          }
+          if(key && v && v["ch"]) {
+            pairs[key] = {...pairs[key], ch: v["ch"]};
+          }
+          if(key && v && v["chp"]) {
+            pairs[key] = {...pairs[key], chp: v["chp"]};
+          }
         }
-        if(key && v && v["logoid"]) {
-          logos[key] = {"logoid": v["logoid"]}          
-        }
-        if(key && !pairs[key]) pairs[key] = {};
-        if(key && v && v["lp"]) {
-          pairs[key] = {...pairs[key], lp: v["lp"]};
-        }
-        if(key && v && v["ch"]) {
-          pairs[key] = {...pairs[key], ch: v["ch"]};
-        }
-        if(key && v && v["chp"]) {
-          pairs[key] = {...pairs[key], chp: v["chp"]};
-        }
+        
       }
     }
     broadcast(data);
