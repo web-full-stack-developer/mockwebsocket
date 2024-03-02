@@ -9,13 +9,22 @@ wss.on('connection', (ws) => {
 
     // Proxy messages between the client and the target server
     ws.on('message', (message) => {
-        targetWs.send(message);
+        try{
+            targetWs.send(message);
+        } catch(e) {
+            console.error(e);
+        }
     });
 
     targetWs.on('message', (message) => {
       const binaryData = Buffer.from(message); // Example binary data
       const text = binaryData.toString('utf8');
+      try {
         ws.send(text);
+      } catch(e) {
+        console.error(e);
+      }
+      
     });
 
     ws.on('close', () => {
