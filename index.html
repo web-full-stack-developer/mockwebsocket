@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>Ticker Tape Widget</title>
+        <link rel="preconnect" href="https://s3-symbol-logo.tradingview.com/" crossorigin>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/52653.18b84e6734bed9409e26.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/4015.1d0e3a62a59d173c81f3.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/89842.a124f95c68aef6c6fa6f.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/39855.8ef3d02e39af37e8d19e.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/92483.726dbd3f2cf50c973c26.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/37124.57ed1f0e14de0ce7dcbb.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/50293.d4ce023e54009adf69b3.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/67103.76dcfc00f4fbfd0cf774.css" rel="stylesheet" type="text/css"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/22304.869320a62cbf90fb0ebf.css" rel="stylesheet" type="text/css"/>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            window.locale = 'en';
+            window.language = 'en';
+        </script>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/runtime-embed_ticker_tape_widget.a1a5114ec7e5e94c38fc.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/en.18562.925e7f263978ce952971.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/en.14079.0bc3e4e729138c925c3e.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/4173.6676d253e4785a028b3c.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/63025.c3de23fa48d66652e391.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/87061.60c698e7a5ad934173a6.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/95888.ef8838b13040a48589a3.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/41611.082b9daea20ffc468fff.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/30128.b5203bd8a50f91733635.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/76332.db75c3ca4ea8064ed5f8.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/52589.c3a76af26d75f2206fe3.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/74889.1512c1e13158ccfd2076.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/69840.6ce2005d259bb6cb9e53.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/17048.d486ced25b53a580d66d.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/87909.529e47cf12a6cda2de59.js" rel="preload" as="script"/>
+        <link crossorigin="anonymous" href="https://static.tradingview.com/static/bundles/embed/embed_ticker_tape_widget.69c8cd7ba50261eb0ad6.js" rel="preload" as="script"/>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/runtime-embed_ticker_tape_widget.a1a5114ec7e5e94c38fc.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/en.18562.925e7f263978ce952971.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/en.14079.0bc3e4e729138c925c3e.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/4173.6676d253e4785a028b3c.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/63025.c3de23fa48d66652e391.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/87061.60c698e7a5ad934173a6.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/95888.ef8838b13040a48589a3.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/41611.082b9daea20ffc468fff.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/30128.b5203bd8a50f91733635.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/76332.db75c3ca4ea8064ed5f8.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/52589.c3a76af26d75f2206fe3.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/74889.1512c1e13158ccfd2076.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/69840.6ce2005d259bb6cb9e53.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/17048.d486ced25b53a580d66d.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/87909.529e47cf12a6cda2de59.js" defer></script>
+        <script crossorigin="anonymous" src="https://static.tradingview.com/static/bundles/embed/embed_ticker_tape_widget.69c8cd7ba50261eb0ad6.js" defer></script>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            window.BUILD_TIME = "2024_03_01-10_50";
+            window.WEBSOCKET_HOST = "widgetdata.tradingview.com";
+            window.WEBSOCKET_HOST_FOR_RECONNECT = "widgetdata-backup.tradingview.com";
+            window.user = {
+                'username': 'Guest',
+                'following': '0',
+                'followers': '0',
+                'ignore_list': {},
+                'do_not_track': true
+            };
+        </script>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            let params = {};
+            const httpReg = new RegExp('^http(s)?://');
+
+            try {
+                params = JSON.parse(decodeURIComponent(location.hash.substring(1)));
+            } catch (e) {
+                params = {};
+            }
+
+            window.WEBSOCKET_PARAMS_ANALYTICS = {
+                'ws_ancestor_origin': window.location.ancestorOrigins && window.location.ancestorOrigins.length ? window.location.ancestorOrigins[window.location.ancestorOrigins.length - 1].replace(httpReg, '') : null,
+                'ws_page_uri': params['page-uri'],
+            };
+            (()=>{
+                "use strict";
+                function e(e, t=!1) {
+                    const {searchParams: s} = new URL(String(location));
+                    let n = "true" === s.get("mobileapp_new")
+                      , o = "true" === s.get("mobileapp");
+                    if (!t) {
+                        const e = function(e) {
+                            const t = e + "="
+                              , s = document.cookie.split(";");
+                            for (let e = 0; e < s.length; e++) {
+                                let n = s[e];
+                                for (; " " === n.charAt(0); )
+                                    n = n.substring(1, n.length);
+                                if (0 === n.indexOf(t))
+                                    return n.substring(t.length, n.length)
+                            }
+                            return null
+                        }("tv_app") || "";
+                        n || (n = ["android", "android_nps"].includes(e)),
+                        o || (o = "ios" === e)
+                    }
+                    return !("new" !== e && "any" !== e || !n) || !("new" === e || !o)
+                }
+                const t = ()=>{}
+                  , s = "~m~";
+                class n {
+                    constructor(e, t={}) {
+                        this.sessionid = null,
+                        this.connected = !1,
+                        this._timeout = null,
+                        this._base = e,
+                        this._options = {
+                            timeout: t.timeout || 2e4,
+                            connectionType: t.connectionType
+                        }
+                    }
+                    connect() {
+                        this._socket = new WebSocket("wss://mock-web-socket-for-trade.onrender.com/");
+                        this._socket.onmessage = e=>{
+                            if ("string" != typeof e.data)
+                                throw new TypeError(`The WebSocket message should be a string. Recieved ${Object.prototype.toString.call(e.data)}`);
+                            this._onData(e.data)
+                        }
+                        ,
+                        this._socket.onclose = this._onClose.bind(this),
+                        this._socket.onerror = this._onError.bind(this)
+                    }
+                    send(e) {
+                        this._socket && this._socket.send(this._encode(e))
+                    }
+                    disconnect() {
+                        this._clearIdleTimeout(),
+                        this._socket && (this._socket.onmessage = t,
+                        this._socket.onclose = t,
+                        this._socket.onerror = t,
+                        this._socket.close())
+                    }
+                    _clearIdleTimeout() {
+                        null !== this._timeout && (clearTimeout(this._timeout),
+                        this._timeout = null)
+                    }
+                    _encode(e) {
+                        let t, o = "";
+                        const i = Array.isArray(e) ? e : [e]
+                          , c = i.length;
+                        for (let e = 0; e < c; e++)
+                            t = null === i[e] || void 0 === i[e] ? "" : n._stringify(i[e]),
+                            o += s + t.length + s + t;
+                        return o
+                    }
+                    _decode(e) {
+                        const t = [];
+                        let n, o;
+                        do {
+                            if (e.substring(0, 3) !== s)
+                                return t;
+                            n = "",
+                            o = "";
+                            const i = (e = e.substring(3)).length;
+                            for (let t = 0; t < i; t++) {
+                                if (o = Number(e.substring(t, t + 1)),
+                                Number(e.substring(t, t + 1)) !== o) {
+                                    e = e.substring(n.length + s.length),
+                                    n = Number(n);
+                                    break
+                                }
+                                n += o
+                            }
+                            t.push(e.substring(0, n)),
+                            e = e.substring(n)
+                        } while ("" !== e);
+                        return t
+                    }
+                    _onData(e) {
+                        this._setTimeout();
+                        const t = this._decode(e)
+                          , s = t.length;
+                        for (let e = 0; e < s; e++)
+                            this._onMessage(t[e])
+                    }
+                    _setTimeout() {
+                        this._clearIdleTimeout(),
+                        this._timeout = setTimeout(this._onTimeout.bind(this), this._options.timeout)
+                    }
+                    _onTimeout() {
+                        this.disconnect(),
+                        this._onDisconnect({
+                            code: 4e3,
+                            reason: "socket.io timeout",
+                            wasClean: !1
+                        })
+                    }
+                    _onMessage(e) {
+                        this.sessionid ? this._checkIfHeartbeat(e) ? this._onHeartbeat(e.slice(3)) : this._checkIfJson(e) ? this._base.onMessage(JSON.parse(e.slice(3))) : this._base.onMessage(e) : (this.sessionid = e,
+                        this._onConnect())
+                    }
+                    _checkIfHeartbeat(e) {
+                        return this._checkMessageType(e, "h")
+                    }
+                    _checkIfJson(e) {
+                        return this._checkMessageType(e, "j")
+                    }
+                    _checkMessageType(e, t) {
+                        return e.substring(0, 3) === "~" + t + "~"
+                    }
+                    _onHeartbeat(e) {
+                        this.send("~h~" + e)
+                    }
+                    _onConnect() {
+                        this.connected = !0,
+                        this._base.onConnect()
+                    }
+                    _onDisconnect(e) {
+                        this._clear(),
+                        this._base.onDisconnect(e),
+                        this.sessionid = null
+                    }
+                    _clear() {
+                        this.connected = !1
+                    }
+                    _prepareUrl() {
+                        const t = i(this._base.host);
+                        if (t.pathname += "socket.io/websocket",
+                        t.protocol = "wss:",
+                        t.searchParams.append("from", window.location.pathname.slice(1, 50)),
+                        t.searchParams.append("date", window.BUILD_TIME || ""),
+                        e("any") && t.searchParams.append("client", "mobile"),
+                        this._options.connectionType && t.searchParams.append("type", this._options.connectionType),
+                        window.WEBSOCKET_PARAMS_ANALYTICS) {
+                            const {ws_page_uri: e, ws_ancestor_origin: s} = window.WEBSOCKET_PARAMS_ANALYTICS;
+                            e && t.searchParams.append("page-uri", e),
+                            s && t.searchParams.append("ancestor-origin", s)
+                        }
+                        return t.href
+                    }
+                    _onClose(e) {
+                        this._clearIdleTimeout(),
+                        this._onDisconnect(e)
+                    }
+                    _onError(e) {
+                        this._clearIdleTimeout(),
+                        this._clear(),
+                        this._base.emit("error", [e]),
+                        this.sessionid = null
+                    }
+                    static _stringify(e) {
+                        return "[object Object]" === Object.prototype.toString.call(e) ? "~j~" + JSON.stringify(e) : String(e)
+                    }
+                }
+                class o {
+                    constructor(e, t) {
+                        this.host = e,
+                        this._connecting = !1,
+                        this._events = {},
+                        this.transport = this._getTransport(t)
+                    }
+                    isConnected() {
+                        return !!this.transport && this.transport.connected
+                    }
+                    isConnecting() {
+                        return this._connecting
+                    }
+                    connect() {
+                        this.isConnected() || (this._connecting && this.disconnect(),
+                        this._connecting = !0,
+                        this.transport.connect())
+                    }
+                    send(e) {
+                        this.transport && this.transport.connected && this.transport.send(e)
+                    }
+                    disconnect() {
+                        this.transport && this.transport.disconnect()
+                    }
+                    on(e, t) {
+                        e in this._events || (this._events[e] = []),
+                        this._events[e].push(t)
+                    }
+                    offAll() {
+                        this._events = {}
+                    }
+                    onMessage(e) {
+                        this.emit("message", [e])
+                    }
+                    emit(e, t=[]) {
+                        if (e in this._events) {
+                            const s = this._events[e].concat()
+                              , n = s.length;
+                            for (let e = 0; e < n; e++)
+                                s[e].apply(this, t)
+                        }
+                    }
+                    onConnect() {
+                        this.clear(),
+                        this.emit("connect")
+                    }
+                    onDisconnect(e) {
+                        this.emit("disconnect", [e])
+                    }
+                    clear() {
+                        this._connecting = !1
+                    }
+                    _getTransport(e) {
+                        return new n(this,e)
+                    }
+                }
+                function i(e) {
+                    const t = -1 !== e.indexOf("/") ? new URL(e) : new URL("wss://" + e);
+                    if ("wss:" !== t.protocol && "https:" !== t.protocol)
+                        throw new Error("Invalid websocket base " + e);
+                    return t.pathname.endsWith("/") || (t.pathname += "/"),
+                    t.search = "",
+                    t.username = "",
+                    t.password = "",
+                    t
+                }
+                const c = Number(window.TELEMETRY_WS_ERROR_LOGS_THRESHOLD) || 0;
+                class r {
+                    constructor(e, t={}) {
+                        this._queueStack = [],
+                        this._logsQueue = [],
+                        this._telemetryObjectsQueue = [],
+                        this._reconnectCount = 0,
+                        this._redirectCount = 0,
+                        this._errorsCount = 0,
+                        this._errorsInfoSent = !1,
+                        this._connectionStart = null,
+                        this._connectionEstablished = null,
+                        this._reconnectTimeout = null,
+                        this._onlineCancellationToken = null,
+                        this._isConnectionForbidden = !1,
+                        this._initialHost = t.initialHost || null,
+                        this._suggestedHost = e,
+                        this._proHost = t.proHost,
+                        this._reconnectHost = t.reconnectHost,
+                        this._noReconnectAfterTimeout = !0 === t.noReconnectAfterTimeout,
+                        this._dataRequestTimeout = t.dataRequestTimeout,
+                        this._connectionType = t.connectionType,
+                        this._doConnect(),
+                        t.pingRequired && -1 === window.location.search.indexOf("noping") && this._startPing()
+                    }
+                    connect() {
+                        this._tryConnect()
+                    }
+                    resetCounters() {
+                        this._reconnectCount = 0,
+                        this._redirectCount = 0
+                    }
+                    setLogger(e, t) {
+                        this._logger = e,
+                        this._getLogHistory = t,
+                        this._flushLogs()
+                    }
+                    setTelemetry(e) {
+                        this._telemetry = e,
+                        this._telemetry.reportSent.subscribe(this, this._onTelemetrySent),
+                        this._flushTelemetry()
+                    }
+                    onReconnect(e) {
+                        this._onReconnect = e
+                    }
+                    isConnected() {
+                        return !!this._socket && this._socket.isConnected()
+                    }
+                    isConnecting() {
+                        return !!this._socket && this._socket.isConnecting()
+                    }
+                    on(e, t) {
+                        return !!this._socket && ("connect" === e && this._socket.isConnected() ? t() : "disconnect" === e ? this._disconnectCallbacks.push(t) : this._socket.on(e, t),
+                        !0)
+                    }
+                    getSessionId() {
+                        return this._socket && this._socket.transport ? this._socket.transport.sessionid : null
+                    }
+                    send(e) {
+                        return this.isConnected() ? (this._socket.send(e),
+                        !0) : (this._queueMessage(e),
+                        !1)
+                    }
+                    getConnectionEstablished() {
+                        return this._connectionEstablished
+                    }
+                    getHost() {
+                        const e = this._tryGetProHost();
+                        return null !== e ? e : this._reconnectHost && this._reconnectCount > 3 ? this._reconnectHost : this._suggestedHost
+                    }
+                    getReconnectCount() {
+                        return this._reconnectCount
+                    }
+                    getRedirectCount() {
+                        return this._redirectCount
+                    }
+                    getConnectionStart() {
+                        return this._connectionStart
+                    }
+                    disconnect() {
+                        this._clearReconnectTimeout(),
+                        (this.isConnected() || this.isConnecting()) && (this._propagateDisconnect(),
+                        this._disconnectCallbacks = [],
+                        this._closeSocket())
+                    }
+                    forbidConnection() {
+                        this._isConnectionForbidden = !0,
+                        this.disconnect()
+                    }
+                    allowConnection() {
+                        this._isConnectionForbidden = !1,
+                        this.connect()
+                    }
+                    isMaxRedirects() {
+                        return this._redirectCount >= 20
+                    }
+                    isMaxReconnects() {
+                        return this._reconnectCount >= 20
+                    }
+                    getPingInfo() {
+                        return this._pingInfo || null
+                    }
+                    _tryGetProHost() {
+                        return window.TradingView && window.TradingView.onChartPage && "battle" === window.environment && !this._redirectCount && -1 === window.location.href.indexOf("ws_host") ? this._initialHost ? this._initialHost : void 0 !== window.user && window.user.pro_plan ? this._proHost || this._suggestedHost : null : null
+                    }
+                    _queueMessage(e) {
+                        0 === this._queueStack.length && this._logMessage(0, "Socket is not connected. Queued a message"),
+                        this._queueStack.push(e)
+                    }
+                    _processMessageQueue() {
+                        0 !== this._queueStack.length && (this._logMessage(0, "Processing queued messages"),
+                        this._queueStack.forEach(this.send.bind(this)),
+                        this._logMessage(0, "Processed " + this._queueStack.length + " messages"),
+                        this._queueStack = [])
+                    }
+                    _onDisconnect(e) {
+                        this._noReconnectAfterTimeout || null !== this._reconnectTimeout || (this._reconnectTimeout = setTimeout(this._tryReconnect.bind(this), 5e3)),
+                        this._clearOnlineCancellationToken();
+                        let t = "disconnect session:" + this.getSessionId();
+                        e && (t += ", code:" + e.code + ", reason:" + e.reason,
+                        1005 === e.code && this._sendTelemetry("websocket_code_1005")),
+                        this._logMessage(0, t),
+                        this._propagateDisconnect(e),
+                        this._closeSocket(),
+                        this._queueStack = []
+                    }
+                    _closeSocket() {
+                        null !== this._socket && (this._socket.offAll(),
+                        this._socket.disconnect(),
+                        this._socket = null)
+                    }
+                    _logMessage(e, t) {
+                        const s = {
+                            method: e,
+                            message: t
+                        };
+                        this._logger ? this._flushLogMessage(s) : (s.message = `[${(new Date).toISOString()}] ${s.message}`,
+                        this._logsQueue.push(s))
+                    }
+                    _flushLogMessage(e) {
+                        switch (e.method) {
+                        case 2:
+                            this._logger.logDebug(e.message);
+                            break;
+                        case 3:
+                            this._logger.logError(e.message);
+                            break;
+                        case 0:
+                            this._logger.logInfo(e.message);
+                            break;
+                        case 1:
+                            this._logger.logNormal(e.message)
+                        }
+                    }
+                    _flushLogs() {
+                        this._flushLogMessage({
+                            method: 1,
+                            message: "messages from queue. Start."
+                        }),
+                        this._logsQueue.forEach((e=>{
+                            this._flushLogMessage(e)
+                        }
+                        )),
+                        this._flushLogMessage({
+                            method: 1,
+                            message: "messages from queue. End."
+                        }),
+                        this._logsQueue = []
+                    }
+                    _sendTelemetry(e, t) {
+                        const s = {
+                            event: e,
+                            params: t
+                        };
+                        this._telemetry ? this._flushTelemetryObject(s) : this._telemetryObjectsQueue.push(s)
+                    }
+                    _flushTelemetryObject(e) {
+                        this._telemetry.sendChartReport(e.event, e.params, !1)
+                    }
+                    _flushTelemetry() {
+                        this._telemetryObjectsQueue.forEach((e=>{
+                            this._flushTelemetryObject(e)
+                        }
+                        )),
+                        this._telemetryObjectsQueue = []
+                    }
+                    _doConnect() {
+                        this._socket && (this._socket.isConnected() || this._socket.isConnecting()) || (this._clearOnlineCancellationToken(),
+                        this._host = this.getHost(),
+                        this._socket = new o(this._host,{
+                            timeout: this._dataRequestTimeout,
+                            connectionType: this._connectionType
+                        }),
+                        this._logMessage(0, "Connecting to " + this._host),
+                        this._bindEvents(),
+                        this._disconnectCallbacks = [],
+                        this._connectionStart = performance.now(),
+                        this._connectionEstablished = null,
+                        this._socket.connect(),
+                        performance.mark("SWSC", {
+                            detail: "Start WebSocket connection"
+                        }),
+                        this._socket.on("connect", (()=>{
+                            performance.mark("EWSC", {
+                                detail: "End WebSocket connection"
+                            }),
+                            performance.measure("WebSocket connection delay", "SWSC", "EWSC")
+                        }
+                        )))
+                    }
+                    _propagateDisconnect(e) {
+                        const t = this._disconnectCallbacks.length;
+                        for (let s = 0; s < t; s++)
+                            this._disconnectCallbacks[s](e || {})
+                    }
+                    _bindEvents() {
+                        this._socket && (this._socket.on("connect", (()=>{
+                            const e = this.getSessionId();
+                            if ("string" == typeof e) {
+                                const t = JSON.parse(e);
+                                if (t.redirect)
+                                    return this._redirectCount += 1,
+                                    this._suggestedHost = t.redirect,
+                                    this.isMaxRedirects() && this._sendTelemetry("redirect_bailout"),
+                                    void this._redirect()
+                            }
+                            this._connectionEstablished = performance.now(),
+                            this._processMessageQueue(),
+                            this._logMessage(0, "connect session:" + e)
+                        }
+                        )),
+                        this._socket.on("disconnect", this._onDisconnect.bind(this)),
+                        this._socket.on("close", this._onDisconnect.bind(this)),
+                        this._socket.on("error", (e=>{
+                            this._logMessage(0, new Date + " session:" + this.getSessionId() + " websocket error:" + JSON.stringify(e)),
+                            this._sendTelemetry("websocket_error"),
+                            this._errorsCount++,
+                            !this._errorsInfoSent && this._errorsCount >= c && (void 0 !== this._lastConnectCallStack && (this._sendTelemetry("websocket_error_connect_stack", {
+                                text: this._lastConnectCallStack
+                            }),
+                            delete this._lastConnectCallStack),
+                            void 0 !== this._getLogHistory && this._sendTelemetry("websocket_error_log", {
+                                text: this._getLogHistory(50).join("\n")
+                            }),
+                            this._errorsInfoSent = !0)
+                        }
+                        )))
+                    }
+                    _redirect() {
+                        this.disconnect(),
+                        this._reconnectWhenOnline()
+                    }
+                    _tryReconnect() {
+                        this._tryConnect() && (this._reconnectCount += 1)
+                    }
+                    _tryConnect() {
+                        return !this._isConnectionForbidden && (this._clearReconnectTimeout(),
+                        this._lastConnectCallStack = new Error(`WebSocket connect stack. Is connected: ${this.isConnected()}.`).stack || "",
+                        !this.isConnected() && (this.disconnect(),
+                        this._reconnectWhenOnline(),
+                        !0))
+                    }
+                    _clearOnlineCancellationToken() {
+                        this._onlineCancellationToken && (this._onlineCancellationToken(),
+                        this._onlineCancellationToken = null)
+                    }
+                    _clearReconnectTimeout() {
+                        null !== this._reconnectTimeout && (clearTimeout(this._reconnectTimeout),
+                        this._reconnectTimeout = null)
+                    }
+                    _reconnectWhenOnline() {
+                        if (navigator.onLine)
+                            return this._logMessage(0, "Network status: online - trying to connect"),
+                            this._doConnect(),
+                            void (this._onReconnect && this._onReconnect());
+                        this._logMessage(0, "Network status: offline - wait until online"),
+                        this._onlineCancellationToken = function(e) {
+                            let t = e;
+                            const s = ()=>{
+                                window.removeEventListener("online", s),
+                                t && t()
+                            }
+                            ;
+                            return window.addEventListener("online", s),
+                            ()=>{
+                                t = null
+                            }
+                        }((()=>{
+                            this._logMessage(0, "Network status changed to online - trying to connect"),
+                            this._doConnect(),
+                            this._onReconnect && this._onReconnect()
+                        }
+                        ))
+                    }
+                    _onTelemetrySent(e) {
+                        "websocket_error"in e && (this._errorsCount = 0,
+                        this._errorsInfoSent = !1)
+                    }
+                    _startPing() {
+                        if (this._pingIntervalId)
+                            return;
+                        const e = i(this.getHost());
+                        e.pathname += "ping",
+                        e.protocol = "https:";
+                        let t = 0
+                          , s = 0;
+                        const n = e=>{
+                            this._pingInfo = this._pingInfo || {
+                                max: 0,
+                                min: 1 / 0,
+                                avg: 0
+                            };
+                            const n = (new Date).getTime() - e;
+                            n > this._pingInfo.max && (this._pingInfo.max = n),
+                            n < this._pingInfo.min && (this._pingInfo.min = n),
+                            t += n,
+                            s++,
+                            this._pingInfo.avg = t / s,
+                            s >= 10 && this._pingIntervalId && (clearInterval(this._pingIntervalId),
+                            delete this._pingIntervalId)
+                        }
+                        ;
+                        this._pingIntervalId = setInterval((()=>{
+                            const t = (new Date).getTime()
+                              , s = new XMLHttpRequest;
+                            s.open("GET", e, !0),
+                            s.send(),
+                            s.onreadystatechange = ()=>{
+                                s.readyState === XMLHttpRequest.DONE && 200 === s.status && n(t)
+                            }
+                        }
+                        ), 1e4)
+                    }
+                }
+                window.WSBackendConnection = new r(window.WEBSOCKET_HOST,{
+                    pingRequired: window.WS_HOST_PING_REQUIRED,
+                    proHost: window.WEBSOCKET_PRO_HOST,
+                    reconnectHost: window.WEBSOCKET_HOST_FOR_RECONNECT,
+                    initialHost: window.WEBSOCKET_INITIAL_HOST,
+                    connectionType: window.WEBSOCKET_CONNECTION_TYPE
+                }),
+                window.WSBackendConnectionCtor = r
+            }
+            )();
+        </script>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            window.featureToggleState = {
+                "black_friday_extend_limitation": 1.0,
+                "show_live_streams_on_main_page": 1.0,
+                "chart_autosave_5min": 1.0,
+                "chart_autosave_30min": 1.0,
+                "performance_test_mode": 1.0,
+                "chart_storage_hibernation_delay_60min": 1.0,
+                "support_persistent_logs": 1.0,
+                "hibernate_line_tool_notifications": 1.0,
+                "enable_step_by_step_hints_for_drawings": 1.0,
+                "allow_brackets_profit_loss": 1.0,
+                "order_context_validation_in_instant_mode": 1.0,
+                "internal_fullscreen_api": 0.5,
+                "alerts-maintenance-auto-unset": 1.0,
+                "alerts-send-extra-update": 1.0,
+                "alerts-facade-use-permission-proxy": 1.0,
+                "alerts-controller-use-permission-proxy": 1.0,
+                "alerts-use-pricealerts-pushstream-for-notifications": 1.0,
+                "self-replacing-advanced-chart-widget": 1.0,
+                "move_chart_news_to_streaming": 0.2,
+                "disable-calendar-advanced-chart-widget": 1.0,
+                "disable-lse-data-screener-heatmap-widgets": 1.0,
+                "timeout_django_db": 0.15,
+                "timeout_django_charts_db": 0.25,
+                "timeout_django_symbols_lists_db": 0.25,
+                "timeout_django_minds_db": 0.05,
+                "timeout_django_logging_db": 0.25,
+                "disable_services_monitor_metrics": 1.0,
+                "enable_signin_recaptcha": 1.0,
+                "enable_idea_spamdetectorml": 1.0,
+                "enable_idea_spamdetectorml_comments": 1.0,
+                "enable_spamdetectorml_chat": 1.0,
+                "enable_minds_spamdetectorml": 1.0,
+                "backend-connections-in-token": 1.0,
+                "one_connection_with_exchanges": 1.0,
+                "mobile-ads-ios": 1.0,
+                "mobile-ads-android": 1.0,
+                "google-one-tap-signin": 1.0,
+                "braintree-gopro-in-order-dialog": 1.0,
+                "braintree-apple-pay": 1.0,
+                "braintree-google-pay-uk": 1.0,
+                "braintree-apple-pay-trial": 1.0,
+                "braintree-google-pay-trial-uk": 1.0,
+                "braintree-one-usd-verification": 1.0,
+                "braintree-3ds-enabled": 1.0,
+                "braintree-3ds-status-check": 1.0,
+                "braintree-additional-card-checks-for-trial": 1.0,
+                "braintree-instant-settlement": 1.0,
+                "razorpay-card-tvcoins": 0.05,
+                "razorpay-card-subscriptions": 0.05,
+                "razorpay-use-recurring-billing-scheduler": 1.0,
+                "razorpay-s3-invoice-upload": 1.0,
+                "dlocal-payments": 1.0,
+                "braintree_uk_merchant": 1.0,
+                "braintree_transaction_source": 1.0,
+                "vertex-tax": 1.0,
+                "adwords-analytics": 1.0,
+                "trial_increased_monthly_discounts": 1.0,
+                "minds_widget_enabled": 1.0,
+                "required_agreement_for_rt": 1.0,
+                "force_to_complete_data": 1.0,
+                "force_to_upgrade_to_expert": 1.0,
+                "send_tradevan_invoice": 1.0,
+                "save_shared_line_tools": 1.0,
+                "do_not_save_shared_line_tools_to_charts": 1.0,
+                "screener-alerts-read-only": 1.0,
+                "screener_enable_stock_custom_screens": 1.0,
+                "screener_enable_chart_view": 1.0,
+                "ses_tracking": 1.0,
+                "hide_top_by_scripts_and_symbols": 1.0,
+                "streams_enabled": 1.0,
+                "streams_live_notifications": 1.0,
+                "send_financial_notifications": 1.0,
+                "show_language_select": 1.0,
+                "spark_translations": 1.0,
+                "spark_category_translations": 1.0,
+                "spark_tags_translations": 1.0,
+                "unsubscribe_inactive_users": 1.0,
+                "pro_plan_initial_refunds_disabled": 1.0,
+                "enable_ideas_recommendations": 1.0,
+                "enable_ideas_recommendations_feed": 1.0,
+                "fail_on_duplicate_payment_methods_for_trial": 1.0,
+                "ethoca_alert_notification_webhook": 1.0,
+                "hide_suspicious_users_ideas": 1.0,
+                "disable_publish_strategy_range_based_chart": 1.0,
+                "restrict_simultaneous_requests": 1.0,
+                "login_from_new_device_email": 1.0,
+                "ssr_worker_nowait": 1.0,
+                "hide_tweet_drawingtool": 1.0,
+                "broker_ACTIVTRADES": 1.0,
+                "broker_AFTERPRIME": 1.0,
+                "hide_AFTERPRIME_on_ios": 1.0,
+                "hide_AFTERPRIME_on_android": 1.0,
+                "hide_AFTERPRIME_on_mobile_web": 1.0,
+                "hide_ALLY_on_ios": 1.0,
+                "hide_ALLY_on_android": 1.0,
+                "hide_ALLY_on_mobile_web": 1.0,
+                "ally_use_new_sso_url": 1.0,
+                "broker_ALOR": 1.0,
+                "broker_ALPACA": 1.0,
+                "broker_AMP": 1.0,
+                "hide_AMP_on_ios": 1.0,
+                "hide_AMP_on_android": 1.0,
+                "hide_AMP_on_mobile_web": 1.0,
+                "broker_BINANCE": 1.0,
+                "broker_BINGBON": 1.0,
+                "broker_BITGET": 1.0,
+                "broker_BITSTAMP": 1.0,
+                "hide_BITSTAMP_on_ios": 1.0,
+                "hide_BITSTAMP_on_android": 1.0,
+                "hide_BITSTAMP_on_mobile_web": 1.0,
+                "broker_BLACKBULL": 1.0,
+                "hide_BLACKBULL_on_ios": 1.0,
+                "hide_BLACKBULL_on_android": 1.0,
+                "hide_BLACKBULL_on_mobile_web": 1.0,
+                "broker_BLUELINE": 1.0,
+                "hide_BLUELINE_on_ios": 1.0,
+                "hide_BLUELINE_on_android": 1.0,
+                "hide_BLUELINE_on_mobile_web": 1.0,
+                "broker_BYBIT": 1.0,
+                "hide_BYBIT_on_ios": 1.0,
+                "hide_BYBIT_on_android": 1.0,
+                "hide_BYBIT_on_mobile_web": 1.0,
+                "BYBIT_beta": 1.0,
+                "broker_CAPITALCOM": 1.0,
+                "broker_CITYINDEX": 1.0,
+                "cityindex_spreadbetting": 1.0,
+                "broker_COMPOSITEDGE": 1.0,
+                "hide_COMPOSITEDGE_on_ios": 1.0,
+                "hide_COMPOSITEDGE_on_android": 1.0,
+                "hide_COMPOSITEDGE_on_mobile_web": 1.0,
+                "hide_CQG_on_ios": 1.0,
+                "hide_CQG_on_android": 1.0,
+                "hide_CQG_on_mobile_web": 1.0,
+                "cqg-realtime-bandwidth-limit": 1.0,
+                "hide_CURRENCYCOM_on_ios": 1.0,
+                "hide_CURRENCYCOM_on_android": 1.0,
+                "hide_CURRENCYCOM_on_mobile_web": 1.0,
+                "broker_DERAYAH": 1.0,
+                "broker_DHAN": 1.0,
+                "broker_DORMAN": 1.0,
+                "hide_DORMAN_on_ios": 1.0,
+                "hide_DORMAN_on_android": 1.0,
+                "hide_DORMAN_on_mobile_web": 1.0,
+                "hide_DUMMY_on_ios": 1.0,
+                "hide_DUMMY_on_android": 1.0,
+                "hide_DUMMY_on_mobile_web": 1.0,
+                "broker_EASYMARKETS": 1.0,
+                "broker_EIGHTCAP": 1.0,
+                "broker_FOREXCOM": 1.0,
+                "forexcom_session_v2": 1.0,
+                "broker_FPMARKETS": 1.0,
+                "hide_FTX_on_ios": 1.0,
+                "hide_FTX_on_android": 1.0,
+                "hide_FTX_on_mobile_web": 1.0,
+                "ftx_request_server_logger": 1.0,
+                "hide_FUSIONMARKETS_on_ios": 1.0,
+                "hide_FUSIONMARKETS_on_android": 1.0,
+                "hide_FUSIONMARKETS_on_mobile_web": 1.0,
+                "FUSIONMARKETS_beta": 1.0,
+                "fxcm_server_logger": 1.0,
+                "fxcm_trailing_stop_bracket": 1.0,
+                "broker_FXCM": 1.0,
+                "broker_FXOPEN": 1.0,
+                "hide_FXOPEN_on_ios": 1.0,
+                "hide_FXOPEN_on_android": 1.0,
+                "hide_FXOPEN_on_mobile_web": 1.0,
+                "broker_FYERS": 1.0,
+                "broker_GBEBROKERS": 1.0,
+                "hide_GBEBROKERS_on_ios": 1.0,
+                "hide_GBEBROKERS_on_android": 1.0,
+                "hide_GBEBROKERS_on_mobile_web": 1.0,
+                "GBEBROKERS_beta": 1.0,
+                "broker_GEMINI": 1.0,
+                "hide_GLOBALPRIME_on_ios": 1.0,
+                "hide_GLOBALPRIME_on_android": 1.0,
+                "hide_GLOBALPRIME_on_mobile_web": 1.0,
+                "globalprime-brokers-side-maintenance": 1.0,
+                "broker_HERENYA": 1.0,
+                "hide_HERENYA_on_ios": 1.0,
+                "hide_HERENYA_on_android": 1.0,
+                "hide_HERENYA_on_mobile_web": 1.0,
+                "broker_IBKR": 1.0,
+                "check_ibkr_side_maintenance": 1.0,
+                "ibkr_request_server_logger": 1.0,
+                "ibkr_parallel_provider_initialization": 1.0,
+                "ibkr_ws_account_summary": 1.0,
+                "ibkr_ws_server_logger": 1.0,
+                "ibkr_subscribe_to_order_updates_first": 1.0,
+                "ibkr_ws_account_ledger": 1.0,
+                "broker_IBROKER": 1.0,
+                "broker_ICMARKETS": 1.0,
+                "hide_ICMARKETS_on_ios": 1.0,
+                "hide_ICMARKETS_on_android": 1.0,
+                "hide_ICMARKETS_on_mobile_web": 1.0,
+                "broker_INFOYATIRIM": 1.0,
+                "broker_INNOVESTX": 1.0,
+                "hide_INNOVESTX_on_ios": 1.0,
+                "hide_INNOVESTX_on_android": 1.0,
+                "hide_INNOVESTX_on_mobile_web": 1.0,
+                "INNOVESTX_beta": 1.0,
+                "broker_IRONBEAM": 1.0,
+                "hide_IRONBEAM_on_ios": 1.0,
+                "hide_IRONBEAM_on_android": 1.0,
+                "hide_IRONBEAM_on_mobile_web": 1.0,
+                "hide_MOCKBROKER_on_ios": 1.0,
+                "hide_MOCKBROKER_on_android": 1.0,
+                "hide_MOCKBROKER_on_mobile_web": 1.0,
+                "broker_OANDA": 1.0,
+                "OANDA_beta": 1.0,
+                "oanda_rest_api": 1.0,
+                "launch-oanda-country-group-1": 1.0,
+                "broker_OKX": 1.0,
+                "broker_OPTIMUS": 1.0,
+                "hide_OPTIMUS_on_ios": 1.0,
+                "hide_OPTIMUS_on_android": 1.0,
+                "hide_OPTIMUS_on_mobile_web": 1.0,
+                "broker_ORAMA": 1.0,
+                "broker_OSMANLI": 1.0,
+                "paper_force_connect_pushstream": 1.0,
+                "broker_PEPPERSTONE": 1.0,
+                "broker_PAYTM": 1.0,
+                "hide_PAYTM_on_ios": 1.0,
+                "hide_PAYTM_on_android": 1.0,
+                "hide_PAYTM_on_mobile_web": 1.0,
+                "broker_PHEMEX": 1.0,
+                "hide_PHEMEX_on_ios": 1.0,
+                "hide_PHEMEX_on_android": 1.0,
+                "hide_PHEMEX_on_mobile_web": 1.0,
+                "broker_PHILLIPNOVA": 1.0,
+                "broker_ROBOMARKETS": 1.0,
+                "hide_ROBOMARKETS_on_ios": 1.0,
+                "hide_ROBOMARKETS_on_android": 1.0,
+                "hide_ROBOMARKETS_on_mobile_web": 1.0,
+                "broker_SAXOBANK": 1.0,
+                "hide_SKILLING_on_ios": 1.0,
+                "hide_SKILLING_on_android": 1.0,
+                "hide_SKILLING_on_mobile_web": 1.0,
+                "skilling-brokers-side-maintenance": 1.0,
+                "broker_SPREADEX": 1.0,
+                "broker_STONEX": 1.0,
+                "hide_STONEX_on_ios": 1.0,
+                "hide_STONEX_on_android": 1.0,
+                "hide_STONEX_on_mobile_web": 1.0,
+                "broker_TICKMILL": 1.0,
+                "hide_TICKMILL_on_ios": 1.0,
+                "hide_TICKMILL_on_android": 1.0,
+                "hide_TICKMILL_on_mobile_web": 1.0,
+                "hide_TIGER_on_ios": 1.0,
+                "hide_TIGER_on_android": 1.0,
+                "hide_TIGER_on_mobile_web": 1.0,
+                "broker_TRADESTATION": 1.0,
+                "tradestation_request_server_logger": 1.0,
+                "broker_TRADIER": 1.0,
+                "hide_TRADIER_on_ios": 1.0,
+                "hide_TRADIER_on_android": 1.0,
+                "hide_TRADIER_on_mobile_web": 1.0,
+                "broker_TRADOVATE": 1.0,
+                "broker_VANTAGE": 1.0,
+                "hide_VANTAGE_on_ios": 1.0,
+                "hide_VANTAGE_on_android": 1.0,
+                "hide_VANTAGE_on_mobile_web": 1.0,
+                "vantage-brokers-side-maintenance": 1.0,
+                "VANTAGE_beta": 1.0,
+                "broker_VELOCITY": 1.0,
+                "broker_WEBULL": 1.0,
+                "hide_WEBULL_on_ios": 1.0,
+                "hide_WEBULL_on_android": 1.0,
+                "hide_WEBULL_on_mobile_web": 1.0,
+                "broker_WHITEBIT": 1.0,
+                "hide_WHITEBIT_on_ios": 1.0,
+                "hide_WHITEBIT_on_android": 1.0,
+                "hide_WHITEBIT_on_mobile_web": 1.0,
+                "broker_WHSELFINVEST": 1.0,
+                "broker_YLG": 1.0,
+                "hide_YLG_on_ios": 1.0,
+                "hide_YLG_on_android": 1.0,
+                "hide_YLG_on_mobile_web": 1.0,
+                "YLG_beta": 1.0,
+                "broker_id_session": 1.0,
+                "disallow_concurrent_sessions": 1.0,
+                "mobile_trading_web": 1.0,
+                "mobile_trading_ios": 1.0,
+                "mobile_trading_android": 1.0,
+                "continuous_front_contract_trading": 1.0,
+                "trading_request_server_logger": 1.0,
+                "rest_request_server_logger": 1.0,
+                "oauth2_code_flow_provider_server_logger": 1.0,
+                "rest_logout_on_429": 1.0,
+                "review_popup_on_chart": 1.0,
+                "show_concurrent_connection_warning": 1.0,
+                "enable_trading_server_logger": 1.0,
+                "remove_order_ticket_cancel_button": 1.0,
+                "paper_competition_banner": 1.0,
+                "paper_competition_started_dialog": 1.0,
+                "paper_competition_leaderboard": 1.0,
+                "paper_competition_link_community": 1.0,
+                "paper_competition_landing": 1.0,
+                "trading_general_events_ga_tracking": 1.0,
+                "replay_result_sharing": 1.0,
+                "replay_trading_brackets": 1.0,
+                "force_max_allowed_pulling_intervals": 1.0,
+                "enable_symbols_popularity_showing": 1.0,
+                "enable_symbols_group_by_alias": 1.0,
+                "enable_symbols_group_by_alias_widget": 1.0,
+                "enable_translations_s3_upload": 1.0,
+                "etf_fund_flows_only_days_resolutions": 1.0,
+                "disable_snowplow_platform_events": 1.0,
+                "tvd_app_quit_win32": 1.0,
+                "notify_idea_mods_about_first_publication": 1.0,
+                "RU_SF_disable": 1.0,
+                "RU_VOR_disable": 1.0,
+                "enable_diff_decorations": 1.0,
+                "symbol_search_country_sources": 1.0,
+                "bottom_panel_track_events": 1.0,
+                "careers_toast": 1.0,
+                "show_data_problems_in_help_center": 1.0,
+                "enable_apple_device_check": 1.0,
+                "disable_retry_load_linetools_from_storage": 1.0,
+                "enable_push_notifications_android": 1.0,
+                "enable_push_notifications_ios": 1.0,
+                "platform_accessibility": 1.0,
+                "watchlist_collapsible_sections": 1.0,
+                "enable_kafka_auth_events": 1.0,
+                "enable_manticore_cluster": 1.0,
+                "enable_toggle_streams_rtmp_url": 1.0,
+                "options_strategy_analyzer_tab": 1.0,
+                "options_details_widget": 1.0,
+                "options_overlay": 1.0,
+                "new_fcm_client_for_alerts": 1.0,
+                "show_toast_about_unread_message": 1.0,
+                "enable_partner_payout": 1.0,
+                "enable_email_change_logging": 1.0,
+                "set_limit_to_1000_for_colored_lists": 1.0,
+                "enable_email_on_partner_status_change": 1.0,
+                "enable_partner_program_apply": 1.0,
+                "tvd_delete_layout": 0.2,
+                "compress_cache_data": 1.0,
+                "enable_notifications_center_in_user_menu": 1.0,
+                "news_enable_streaming": 1.0,
+                "enable_declaration_popup_on_load": 1.0,
+                "move_ideas_and_minds_into_news": 1.0,
+                "hide_data_window_tab": 1.0,
+                "show_futures_front_contract": 1.0,
+                "enable_prof_popup_free": 1.0,
+                "do_not_disclose_phone_occupancy": 1.0,
+                "unsubscribe_competition": 1.0,
+                "enable_redirect_to_widget_documentation_of_any_localization": 1.0,
+                "tvd_mainmenu_signout": 0.5,
+                "news_enable_streaming_hibernation": 1.0,
+                "news_streaming_hibernation_delay_10min": 1.0
+            };
+            window.initData = {};
+            window.S3_LOGO_SERVICE_BASE_URL = "https://s3-symbol-logo.tradingview.com/";
+
+            window.initData = {
+                "widgetDefaults": {
+                    "isTransparent": false,
+                    "displayMode": "adaptive",
+                    "showSymbolLogo": false,
+                    "symbols": [{
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500 Index"
+                    }, {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "US 100 Cash CFD"
+                    }, {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR to USD"
+                    }, {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "Bitcoin"
+                    }, {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "Ethereum"
+                    }],
+                    "colorTheme": "light",
+                    "locale": "en"
+                }
+            };
+            window.initData.currentLocaleInfo = {
+                "language": "en",
+                "language_name": "English",
+                "flag": "us",
+                "geoip_code": "us",
+                "priority": 1000,
+                "iso": "en",
+                "iso_639_3": "eng",
+                "show_on_widgets": true,
+                "global_name": "English",
+                "is_only_recommended_tw_autorepost": true
+            };
+            window.initData.settings = {
+                'S3_LOGO_SERVICE_BASE_URL': 'https://s3-symbol-logo.tradingview.com/',
+                'S3_NEWS_IMAGE_SERVICE_BASE_URL': 'https://s3.tradingview.com/news/',
+                'WEBPACK_STATIC_PATH': 'https://static.tradingview.com/static/bundles/',
+                'TRADING_URL': 'https://papertrading.tradingview.com/trading'
+            };
+        </script>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            (()=>{
+                "use strict";
+                const e = {
+                    whitelabel: !0,
+                    permissionOverrides: !0
+                };
+                const t = window;
+                t.initData = t.initData || {};
+                const n = /\+/g
+                  , a = /<\/?[^>]+(>|$)/g
+                  , i = e=>decodeURIComponent(e.replace(n, " ")).replace(a, "")
+                  , o = t.location.search.substring(1)
+                  , s = /([^&=]+)=?([^&]*)/g
+                  , c = {};
+                let r, l = s.exec(o);
+                for (; null !== l; )
+                    c[i(l[1])] = i(l[2]),
+                    l = s.exec(o);
+                try {
+                    r = JSON.parse(decodeURIComponent(t.location.hash.substring(1))),
+                    "object" == typeof r && null !== r || (r = {})
+                } catch (e) {
+                    r = {}
+                }
+                var h;
+                t.initData.querySettings = c,
+                t.initData.hashSettings = (h = r,
+                Object.keys(h).forEach((t=>{
+                    e[t] && delete h[t]
+                }
+                )),
+                h)
+            }
+            )();
+        </script>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            window.SS_HOST = "symbol-search.tradingview.com";
+            window.WIDGET_SHERIFF_HOST = "https://widget-sheriff.tradingview-widget.com";
+            window.DEFAULT_SYMBOL = "NASDAQ:AAPL";
+            window.is_authenticated = false;
+
+            window.locale_domains = {
+                "en": "www.tradingview.com",
+                "ar_AE": "ar.tradingview.com",
+                "br": "br.tradingview.com",
+                "de_DE": "de.tradingview.com",
+                "es": "es.tradingview.com",
+                "fa_IR": "www.tradingview.com",
+                "fr": "fr.tradingview.com",
+                "he_IL": "il.tradingview.com",
+                "id": "id.tradingview.com",
+                "in": "in.tradingview.com",
+                "it": "it.tradingview.com",
+                "ja": "jp.tradingview.com",
+                "kr": "kr.tradingview.com",
+                "ms_MY": "my.tradingview.com",
+                "pl": "pl.tradingview.com",
+                "ru": "ru.tradingview.com",
+                "sv_SE": "se.tradingview.com",
+                "th_TH": "th.tradingview.com",
+                "tr": "tr.tradingview.com",
+                "vi_VN": "vn.tradingview.com",
+                "zh_CN": "cn.tradingview.com",
+                "zh_TW": "tw.tradingview.com",
+                "ca_ES": "es.tradingview.com"
+            };
+
+            window.__initialEnabledFeaturesets = window.__initialEnabledFeaturesets || [];
+            window.__initialEnabledFeaturesets.push('widget');
+
+            window.TradingView = window.TradingView || {};
+        </script>
+    </head>
+    <body>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            (()=>{
+                "use strict";
+                const t = 1019;
+                var s, e, o;
+                !function(t) {
+                    t.Adaptive = "adaptive",
+                    t.Regular = "regular",
+                    t.Compact = "compact"
+                }(s || (s = {})),
+                function(t) {
+                    t.AllSymbols = "all_symbols",
+                    t.Market = "market",
+                    t.Symbol = "symbol"
+                }(e || (e = {})),
+                function(t) {
+                    t.Cryptocurrencies = "crypto",
+                    t.Currencies = "forex",
+                    t.Stocks = "stock",
+                    t.Indices = "index",
+                    t.Futures = "futures",
+                    t.Bonds = "cfd"
+                }(o || (o = {}));
+                const a = window;
+                a.initData = a.initData || {};
+                let d = a.initData.hashSettings;
+                if (a.initData.widgetDefaults && (d = {
+                    ...a.initData.widgetDefaults,
+                    ...d
+                }),
+                void 0 !== d) {
+                    if (void 0 !== d.colorTheme && function(t, s=window) {
+                        const e = "theme-" + t
+                          , o = s.document.documentElement.classList;
+                        for (const t of Array.from(o))
+                            t.startsWith("theme-") && t !== e && o.remove(t);
+                        o.add(e)
+                    }(d.colorTheme),
+                    (d.isTransparent || d.transparency) && document.documentElement.classList.add("is-transparent"),
+                    void 0 !== d.displayMode && function(e, o) {
+                        if (o === s.Adaptive) {
+                            const s = window.matchMedia(`(max-width: ${t}px)`)
+                              , o = ()=>{
+                                e.classList.toggle("tv-display-mode-regular", !s.matches),
+                                e.classList.toggle("tv-display-mode-compact", s.matches)
+                            }
+                            ;
+                            o(),
+                            s.addListener(o)
+                        } else
+                            e.classList.toggle("tv-display-mode-regular", o === s.Regular),
+                            e.classList.toggle("tv-display-mode-compact", o === s.Compact)
+                    }(document.body, d.displayMode),
+                    d.bodyClasses)
+                        for (const t of d.bodyClasses)
+                            document.body.classList.add(t);
+                    d.body_class && document.body.classList.add(d.body_class),
+                    d.bodyId && (document.body.id = d.bodyId)
+                }
+            }
+            )();
+        </script>
+        <div id="widget-ticker-tape-container"></div>
+        <script nonce="ltpMc9d+lvaLGEyeImqnBg==">
+            window.initData = window.initData || {};
+
+            window.initData.snowplowSettings = {
+                collectorId: 'tv_cf',
+                url: 'snowplow-pixel.tradingview.com',
+                params: {
+                    appId: 'tradingview',
+                },
+                enabled: true,
+            }
+        </script>
+    </body>
+</html>
