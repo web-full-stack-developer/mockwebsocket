@@ -1,10 +1,13 @@
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 3001 });
 
+let connections = 0;
 wss.on('connection', (ws) => {
+    connections ++;
+    console.log("new add ", connections);
     // Extract the target WebSocket URL from the request (e.g., query parameters)
     const targetWs = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket", {
-      origin: 'http://localhost'
+      origin: 'https://www.tradingview.com'
     });
 
     // Proxy messages between the client and the target server
@@ -29,6 +32,8 @@ wss.on('connection', (ws) => {
 
     ws.on('close', () => {
         targetWs.close();
+        connections --;
+        console.log("close one ", connections);
     });
 
     targetWs.on('close', () => {
