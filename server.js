@@ -1,46 +1,87 @@
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 3001 });
 
-var clients = [];
-
-const targetWs = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket", {
-  origin: 'https://www.tradingview.com'
+var clients = [[], [], [], []];
+var targetWs = [];
+targetWs[0] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fmarket-overview%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fmarket-overview%2F", {
+	origin: 'https://www.tradingview.com'
+});
+targetWs[1] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fticker-tape%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fticker-tape%2F", {
+	origin: 'https://www.tradingview.com'
+});
+targetWs[2] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fsingle-quote%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fsingle-ticker%2F", {
+	origin: 'https://www.tradingview.com'
+});
+targetWs[3] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fadvanced-chart%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fadvanced-chart%2F", {
+	origin: 'https://www.tradingview.com'
 });
 
-function broadcast(message) {
-  clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(message);
-    }
-  });
+function broadcast(id, message) {
+	clients[id].forEach((client) => {
+		if (client.readyState === WebSocket.OPEN) {
+			client.send(message);
+		}
+	});
 }
 
-targetWs.on('message', (message) => {
-  const binaryData = Buffer.from(message); // Example binary data
-  const text = binaryData.toString('utf8');
-  broadcast(text);
+targetWs[0].on('message', (message) => {
+	const binaryData = Buffer.from(message); // Example binary data
+	const text = binaryData.toString('utf8');
+	broadcast(0, text);
+});
+targetWs[1].on('message', (message) => {
+	const binaryData = Buffer.from(message); // Example binary data
+	const text = binaryData.toString('utf8');
+	broadcast(1, text);
+});
+targetWs[2].on('message', (message) => {
+	const binaryData = Buffer.from(message); // Example binary data
+	const text = binaryData.toString('utf8');
+	broadcast(2, text);
+});
+targetWs[3].on('message', (message) => {
+	const binaryData = Buffer.from(message); // Example binary data
+	const text = binaryData.toString('utf8');
+	broadcast(3, text);
 });
 
 
 let connections = 0;
-wss.on('connection', (ws) => {
-    connections ++;
-    console.log("new add ", connections);
-    clients.push(ws);
-    
-    // Proxy messages between the client and the target server
-    ws.on('message', (message) => {
-        try{
-            targetWs.send(message);
-        } catch(e) {
-            console.error(e);
-        }
-    });
+wss.on('connection', (ws, req) => {
+	
+	var id = 0;
+	if (req.url.indexOf("watchlists.html") > -1) {
+		id = 0;
+	}
+	if (req.url.indexOf("tickers.html") > -1) {
+		id = 1;
+	}
+	if (req.url.indexOf("singleticker.html") > -1) {
+		id = 2;
+	}
+	if (req.url.indexOf("chart.html") > -1) {
+		id = 3;
+	}
+	
+	console.log(req.url);
+	connections++;
+	console.log("new add ", id, " ", connections);
+	ws.send('~m~346~m~{"session_id":"<0.4949.2378>_dal-charts-5-wgt-webchart-4@dal-compute-5","timestamp":1709512185,"timestampMs":1709512185140,"release":"registry.xtools.tv/tvbs_release/webchart:release_207-48","studies_metadata_hash":"0f1da59be5cb3ebc5873b524e394cf0792c5339d","auth_scheme_vsn":2,"protocol":"json","via":"209.58.153.118:443","javastudies":["3.64"]}');
+	clients[id].push(ws);
 
-    ws.on('close', () => {
-        clients.splice(clients.indexOf(ws), 1);
-        connections --;
-        console.log("close one ", connections);
-    });
-    
+	// Proxy messages between the client and the target server
+	ws.on('message', (message) => {
+		try {
+			targetWs[id].send(message);
+		} catch (e) {
+			console.error(e);
+		}
+	});
+
+	ws.on('close', () => {
+		clients[id].splice(clients[id].indexOf(ws), 1);
+		connections--;
+		console.log("close one ", id, " ", connections);
+	});
+
 });
