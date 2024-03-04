@@ -49,7 +49,7 @@ targetWs[3].on('message', (message) => {
 let connections = 0;
 wss.on('connection', (ws, req) => {
 	
-	var id = 0;
+	var id = -1;
 	if (req.url.indexOf("watchlists.html") > -1) {
 		id = 0;
 	}
@@ -62,7 +62,7 @@ wss.on('connection', (ws, req) => {
 	if (req.url.indexOf("chart.html") > -1) {
 		id = 3;
 	}
-	
+	if(id == -1) return;
 	console.log(req.url);
 	connections++;
 	console.log("new add ", id, " ", connections);
