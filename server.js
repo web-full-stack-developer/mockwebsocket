@@ -28,25 +28,25 @@ function broadcast(id, message) {
 targetWs[0].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[0]) initMsg[0] = message;
+	if(!initMsg[0]) initMsg[0] = text;
 	broadcast(0, text);
 });
 targetWs[1].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[1]) initMsg[1] = message;
+	if(!initMsg[1]) initMsg[1] = text;
 	broadcast(1, text);
 });
 targetWs[2].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[2]) initMsg[2] = message;
+	if(!initMsg[2]) initMsg[2] = text;
 	broadcast(2, text);
 });
 targetWs[3].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[3]) initMsg[3] = message;
+	if(!initMsg[3]) initMsg[3] = text;
 	broadcast(3, text);
 });
 
