@@ -18,7 +18,7 @@ targetWs[3] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocke
 });
 
 function broadcast(id, message) {
-	console.log(id);
+	console.log(id, message);
 	clients[id].forEach((client) => {
 		if (client.readyState === WebSocket.OPEN) {
 			client.send(message);
