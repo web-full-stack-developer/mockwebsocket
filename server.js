@@ -4,18 +4,7 @@ const wss = new WebSocket.Server({ port: 3001 });
 var clients = [[], [], [], []];
 var initMsg = ["", "", "", ""];
 var targetWs = [];
-targetWs[0] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fmarket-overview%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fmarket-overview%2F", {
-	origin: 'https://www.tradingview.com'
-});
-targetWs[1] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fticker-tape%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fticker-tape%2F", {
-	origin: 'https://www.tradingview.com'
-});
-targetWs[2] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fsingle-quote%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fsingle-ticker%2F", {
-	origin: 'https://www.tradingview.com'
-});
-targetWs[3] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fadvanced-chart%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fadvanced-chart%2F", {
-	origin: 'https://www.tradingview.com'
-});
+var lastTime = [0, 0, 0, 0];
 
 function broadcast(id, message) {
 	console.log(id, message.substr(0, 30));
@@ -26,62 +15,38 @@ function broadcast(id, message) {
 	});
 }
 
-targetWs[0].on('message', (message) => {
-	const binaryData = Buffer.from(message); // Example binary data
-	const text = binaryData.toString('utf8');
-
-	if(!initMsg[0]) {
-		initMsg[0] = text;
-		console.log(text);
-	}
-
-	broadcast(0, text);
-});
-targetWs[1].on('message', (message) => {
-	const binaryData = Buffer.from(message); // Example binary data
-	const text = binaryData.toString('utf8');
-	if(!initMsg[1]) {
-		initMsg[1] = text;
-		console.log(text);
-	}
-	broadcast(1, text);
-});
-targetWs[2].on('message', (message) => {
-	const binaryData = Buffer.from(message); // Example binary data
-	const text = binaryData.toString('utf8');
-	if(!initMsg[2]) {
-		initMsg[2] = text;
-		console.log(text);
-	}
-	broadcast(2, text);
-});
-targetWs[3].on('message', (message) => {
-	const binaryData = Buffer.from(message); // Example binary data
-	const text = binaryData.toString('utf8');
-	if(!initMsg[3]) {
-		initMsg[3] = text;
-		console.log(text);
-	}
-	broadcast(3, text);
-});
-
+const createSocket = (id) => {
+	links = [
+		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fmarket-overview%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fmarket-overview%2F",
+		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fticker-tape%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fticker-tape%2F",
+		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fsingle-quote%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fsingle-ticker%2F",
+		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fadvanced-chart%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fadvanced-chart%2F"
+	]
+	targetWs[id] = new WebSocket(links[id], {
+		origin: 'https://www.tradingview.com'
+	});
+	initMsg[id] = "";
+	targetWs[id].on('message', (message) => {
+		const binaryData = Buffer.from(message); // Example binary data
+		const text = binaryData.toString('utf8');
+	
+		if(!initMsg[id]) {
+			initMsg[id] = text;
+			console.log(text);
+		}
+		lastTime[id] = new Date();
+		broadcast(id, text);
+	});
+		
+}
 
 let connections = 0;
 wss.on('connection', (ws, req) => {
-	
 	var id = -1;
-	if (req.url.indexOf("watchlists.html") > -1) {
-		id = 0;
-	}
-	if (req.url.indexOf("tickers.html") > -1) {
-		id = 1;
-	}
-	if (req.url.indexOf("singleticker.html") > -1) {
-		id = 2;
-	}
-	if (req.url.indexOf("chart.html") > -1) {
-		id = 3;
-	}
+	if (req.url.indexOf("watchlists.html") > -1) id = 0;
+	if (req.url.indexOf("tickers.html") > -1) id = 1;
+	if (req.url.indexOf("singleticker.html") > -1) id = 2;
+	if (req.url.indexOf("chart.html") > -1) id = 3;
 	if(id == -1) return;
 	console.log(req.url);
 	connections++;
@@ -117,3 +82,16 @@ wss.on('connection', (ws, req) => {
 	});
 
 });
+
+setInterval(() => {
+	var now = new Date();
+	for(var i = 0; i < 4; i ++) {
+		if(now - lastTime[i] > 10000) {
+			createSocket(i);
+		}
+	}
+}, 3000);
+
+for(var i = 0; i < 4; i ++) {
+	createSocket(i);
+}
