@@ -16,6 +16,7 @@ function broadcast(id, message) {
 }
 
 const createSocket = (id) => {
+	console.log(`Socket ${id} is  restarting...`);
 	links = [
 		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fmarket-overview%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fmarket-overview%2F",
 		"wss://widgetdata.tradingview.com/socket.io/websocket?from=embed-widget%2Fticker-tape%2F&date=2024_03_01-10_50&page-uri=www.tradingview.com%2Fwidget-wizard%2Fen%2Flight%2Fticker-tape%2F",
@@ -34,7 +35,7 @@ const createSocket = (id) => {
 			initMsg[id] = text;
 			console.log(text);
 		}
-		lastTime[id] = new Date();
+		if(text.length > 12) lastTime[id] = new Date();
 		broadcast(id, text);
 	});
 		
@@ -86,7 +87,7 @@ wss.on('connection', (ws, req) => {
 setInterval(() => {
 	var now = new Date();
 	for(var i = 0; i < 4; i ++) {
-		if(now - lastTime[i] > 10000) {
+		if(now - lastTime[i] > 4000) {
 			createSocket(i);
 		}
 	}
