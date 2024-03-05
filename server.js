@@ -29,11 +29,12 @@ function broadcast(id, message) {
 targetWs[0].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
+
 	if(!initMsg[0]) {
 		initMsg[0] = text;
 		console.log(text);
 	}
-	
+
 	broadcast(0, text);
 });
 targetWs[1].on('message', (message) => {
