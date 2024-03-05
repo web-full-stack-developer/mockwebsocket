@@ -18,6 +18,7 @@ targetWs[3] = new WebSocket("wss://widgetdata.tradingview.com/socket.io/websocke
 });
 
 function broadcast(id, message) {
+	console.log(id);
 	clients[id].forEach((client) => {
 		if (client.readyState === WebSocket.OPEN) {
 			client.send(message);
@@ -28,25 +29,38 @@ function broadcast(id, message) {
 targetWs[0].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[0]) initMsg[0] = message;
+	if(!initMsg[0]) {
+		initMsg[0] = text;
+		console.log(text);
+	}
+	
 	broadcast(0, text);
 });
 targetWs[1].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[1]) initMsg[0] = message;
+	if(!initMsg[1]) {
+		initMsg[1] = text;
+		console.log(text);
+	}
 	broadcast(1, text);
 });
 targetWs[2].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[2]) initMsg[0] = message;
+	if(!initMsg[2]) {
+		initMsg[2] = text;
+		console.log(text);
+	}
 	broadcast(2, text);
 });
 targetWs[3].on('message', (message) => {
 	const binaryData = Buffer.from(message); // Example binary data
 	const text = binaryData.toString('utf8');
-	if(!initMsg[3]) initMsg[0] = message;
+	if(!initMsg[3]) {
+		initMsg[3] = text;
+		console.log(text);
+	}
 	broadcast(3, text);
 });
 
@@ -71,13 +85,25 @@ wss.on('connection', (ws, req) => {
 	console.log(req.url);
 	connections++;
 	console.log("new add ", id, " ", connections);
-	ws.send(initMsg[id]);
+	if(initMsg[id]) {
+		if (ws.readyState === WebSocket.OPEN) {
+			ws.send(initMsg[id]); 
+			console.log("sent1");
+		}
+	}else {
+		if(ws.readyState == WebSocket.OPEN) {
+			ws.send('~m~346~m~{"session_id":"<0.4949.2378>_dal-charts-5-wgt-webchart-4@dal-compute-5","timestamp":1709512185,"timestampMs":1709512185140,"release":"registry.xtools.tv/tvbs_release/webchart:release_207-48","studies_metadata_hash":"0f1da59be5cb3ebc5873b524e394cf0792c5339d","auth_scheme_vsn":2,"protocol":"json","via":"209.58.153.118:443","javastudies":["3.64"]}');
+			console.log("sent2");
+		}
+	}
 	clients[id].push(ws);
 
 	// Proxy messages between the client and the target server
 	ws.on('message', (message) => {
 		try {
-			targetWs[id].send(message);
+			if(targetWs[id].readyState == WebSocket.OPEN) {
+				targetWs[id].send(message);
+			}
 		} catch (e) {
 			console.error(e);
 		}
